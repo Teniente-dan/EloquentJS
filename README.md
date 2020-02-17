@@ -1,4 +1,4 @@
 # EloquentJS
 Ejercicios JS
 
-from local
+from Fedora
