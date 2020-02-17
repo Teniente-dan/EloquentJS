@@ -1,0 +1,12 @@
+/* 
+ctrl shift k        = delete
+alt shift up/down   = duplica linea
+
+alt up/down         = mueve linea
+
+ctrl f2             = modifica todas las ocurrencias
+ctrl alt up/down    = modificacion en bloque
+
+ctrl }              = comenta linea
+shift alt a         = bloque de comentario
+*/
