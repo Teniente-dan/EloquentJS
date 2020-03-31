@@ -1,80 +1,92 @@
+// function sleep(milliseconds) {
+//     const date = Date.now();
+//     let currentDate = null;
+//     do {
+//       currentDate = Date.now();
+//     } while (currentDate - date < milliseconds);
+//   }
+ 
 // function functionOne(varReturnVal) { 
+//     sleep(10000);
 //     console.log(varReturnVal); 
 // }
 
-// function functionTwo(val1, callback) {
-//     callback(val1);		
+// function functionTwo(val1, callback) {  
+//     console.log('two');	    	
+//     callback(val1);
 // }
 
 // functionTwo("Value, getting routed through the callback", functionOne);
+// console.log('one');	  
 
-var now=Date.now();
 
-function fnCallbackCurrencyData (successCallback, failCallback) {
-                setTimeout(successCallback, 1000);
-                console.log('fnCallbackCurrencyData<BR>');
-                console.log ((Date.now() - now)  + ' fnCallbackCurrencyData')
+// var now=Date.now();
 
-}
+// function fnCallbackCurrencyData (successCallback, failCallback) {
+//                 setTimeout(successCallback, 1000);
+//                 console.log('fnCallbackCurrencyData<BR>');
+//                 console.log ((Date.now() - now)  + ' fnCallbackCurrencyData')
 
-function fnCallbackFlightData (successCallback, failCallback) {
-                setTimeout(successCallback, 3000);
-                console.log('fnCallbackFlightData<BR>');
-                console.log ((Date.now() - now)  + ' fnCallbackFlightData')
-}
+// }
 
-function fnCallbackTransactionData (successCallback, failCallback) {
-                setTimeout(successCallback, 1000);
-                console.log('fnCallbackTransactionData<BR>');
-                console.log ((Date.now() - now)  + ' fnCallbackTransactionData')
-}
+// function fnCallbackFlightData (successCallback, failCallback) {
+//                 setTimeout(successCallback, 3000);
+//                 console.log('fnCallbackFlightData<BR>');
+//                 console.log ((Date.now() - now)  + ' fnCallbackFlightData')
+// }
 
-var flagCurrencyReady = false;
-var flagflightReady = false;
-var flagTransactionReady = false;
-let called = 0;
+// function fnCallbackTransactionData (successCallback, failCallback) {
+//                 setTimeout(successCallback, 1000);
+//                 console.log('fnCallbackTransactionData<BR>');
+//                 console.log ((Date.now() - now)  + ' fnCallbackTransactionData')
+// }
 
-fnCallbackTransactionData(function () {
-                flagTransactionReady=true;
-                console.log('tran called')
-                if (flagCurrencyReady && flagflightReady) {
-                    console.log('tran ready called')
-                               allReady();
-                }
+// var flagCurrencyReady = false;
+// var flagflightReady = false;
+// var flagTransactionReady = false;
+// let called = 0;
 
-}, function () {
-                console.log('error from callback 1');
-});
+// fnCallbackTransactionData(function () {
+//                 flagTransactionReady=true;
+//                 console.log('tran called')
+//                 if (flagCurrencyReady && flagflightReady) {
+//                     console.log('tran ready called')
+//                                allReady();
+//                 }
 
-fnCallbackCurrencyData(function () {
-                flagCurrencyReady=true;
-                console.log('curr called' + flagTransactionReady + flagflightReady)
-                if (flagTransactionReady && flagflightReady) {
-                    console.log('curr ready called')           
-                    allReady();
-                }
+// }, function () {
+//                 console.log('error from callback 1');
+// });
 
-}, function () {
-                console.log('error from callback 3');
-});
+// fnCallbackCurrencyData(function () {
+//                 flagCurrencyReady=true;
+//                 console.log('curr called' + flagTransactionReady + flagflightReady)
+//                 if (flagTransactionReady && flagflightReady) {
+//                     console.log('curr ready called')           
+//                     allReady();
+//                 }
 
-fnCallbackFlightData(function () {
-                flagflightReady=true;
-                console.log('flight called')
-                if (flagCurrencyReady && flagTransactionReady) {
-                    console.log('flight ready called')           
-                               allReady();
-                }
-}, function () {
-                console.log('error from callback 2');
-});
+// }, function () {
+//                 console.log('error from callback 3');
+// });
 
-function allReady() {
-                called =+ 1;
-                // when all async actions are done...
-                console.log('All callback examples executed, data from three data models can be displayed.<BR>');
-                console.log ((Date.now() - now)  + ' end')
-}
+// fnCallbackFlightData(function () {
+//                 flagflightReady=true;
+//                 console.log('flight called')
+//                 if (flagCurrencyReady && flagTransactionReady) {
+//                     console.log('flight ready called')           
+//                                allReady();
+//                 }
+// }, function () {
+//                 console.log('error from callback 2');
+// });
+
+// function allReady() {
+//                 called =+ 1;
+//                 // when all async actions are done...
+//                 console.log('All callback examples executed, data from three data models can be displayed.<BR>');
+//                 console.log ((Date.now() - now)  + ' end')
+// }
 
 
 var start=Date.now();
